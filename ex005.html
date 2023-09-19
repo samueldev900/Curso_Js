@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-weight: large;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1> Iniciando estudos DOM</h1>
+    <p>Aqui vai o <strong>resultado</strong></p>
+    <div id="msg">Clique aqui </div>
+    <div id="msg2">Clique aqui </div>
+    <script>
+        var corpo = window.document.body;
+        var n =  window.document.getElementsByTagName('p')[0];
+        var n1 = window.document.getElementById('msg');
+        var n2 = window.document.querySelector('div#msg2');
+        window.document.write('Está escrito assim: ' + n.innerText);
+        n.style.backgroundColor = 'blue';
+        corpo.style.backgroundColor = 'green';
+        n1.style.color = 'red';
+        n2.style.backgroundColor = 'white';
+
+    </script>
+    
+</body>
+</html>

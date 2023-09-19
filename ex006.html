@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio de DOM</title>
+</head>
+    <style>
+        div#area{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+<body>
+    <div id="area">
+
+        Interaja...
+
+    </div>
+    <script>
+        a = window.document.getElementById('area');
+        a.addEventListener('click',clicou);
+        a.addEventListener('mouseenter', entrar);
+        a.addEventListener('mouseout', sair)
+
+        function clicou(){
+
+            a.innerText = 'Clicou!!';
+            a.style.backgroundColor = 'red';
+            
+        }
+
+        function entrar(){
+            a.innerText = 'Entrou!';
+            a.style.backgroundColor = 'yellow'
+        }
+
+        function sair(){
+            a.innerText = 'Saiu!!';
+            a.style.backgroundColor = 'green';
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+				Aula 6
+
+
+Declarações de variaveis == let and var 
+Consertter string pra intt == Number.Int(), Number.Float() ou apenas Number()
+Converter int para String == String(n) and .toString(n) 
+
+s.lenght == conta quantos caracteres tem a string
+s.toUpperCase() == coloca toda string para MAIUSCULA
+s.toLowerCase() == toda a string prar minuscula 
+
+
+
+n.toFixed(2) == adiciona 2 casas decimais ao numero float
+n.toFixed(2).replace('.', ',') == troca o ponto pela virgula
+document.Write (escreve no html)
+
+n.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) == formata o numero em MOEDA BRL 
+se quiser converter em outra moeda é só trocar o BRL prar moeda desejada.
+
+==============================================================================================
+
+
+					Aula 08
+
+
+Ordem de precedência dos Operadoreas Aritiméticos
+
+1 - (!) Operador de diferente
+2 - (&&) Operador and
+3 - (||) Operador or
+
+Operadores TERNÁRIO (JUNTA 3 OPERANDOS)
+
+ ? E :
+
+exemplo:    teste ? true : false
+
+Mesmo funcionamento das estruturas condicionais onde teste é a estrutura logica que recebe true ou false e no lugar de true e false é a condição se true ou false
+	
