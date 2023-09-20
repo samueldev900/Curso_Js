@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<style>
+    div{
+        padding-top: 30px;
+    }
+
+</style>
+<body>
+    <h1>Determinando sua Nacionalidade</h1>
+
+    Informe o Pais em que está: <input type="text" name="txt1" id="txt1" >
+    <input type="button" value="Check" name="btn1" id="btn1"  onclick="clicar()">
+
+    <div id="res">Resultado</div>
+
+    <script>
+
+        function clicar(){
+
+            pais = window.document.querySelector('input#txt1');
+            res = document.querySelector('div#res');
+            n = pais.value;
+            res.innerHTML = (`O pais em que está é ${n}`)
+
+            if(n =='Brasil'){
+                res.innerHTML += ('<p>Sua nacionalidade é <strong>Brasileira</strong></p>')
+            }
+            else{
+                res.innerHTML += ('<p>Você é <strong>Estrangeiro!</strong></p>')
+            }
+        }
+
+        document.getElementById('txt1').addEventListener("keydown", function(event){
+            if(event.key=="Enter"){
+                
+                clicar();
+            }
+        });
+        
+    </script>
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
