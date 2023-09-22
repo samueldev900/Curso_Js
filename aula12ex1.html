@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Que Horas são ? </title>
+</head>
+<style>
+    body{
+        background-color: rgba(197, 181, 108, 0.678);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    main{
+        background-color: white;
+        background-position: center center;
+        background-repeat: no-repeat;
+        color: black;
+        height: 500px;
+        width: 700px;
+        margin: auto;
+        padding: 15px;
+        border-radius: 15px;
+    }
+    div{
+        height: 400px;
+        width: 400px;
+        background-image: url(imagens/por_dosol_redondo-removebg-preview.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%,-50%);
+        
+    }
+
+    p{
+        font-size: 17pt;
+    }
+
+</style>
+<body id="corpo">
+        <h1>Hora do Dia</h1>
+        <main>
+
+            <p id="time">Agora são </p>
+
+           <div id="imag">
+                
+           </div>
+
+        </main>
+
+        <footer>
+            <p>
+                ©️ SamuelOliveira
+            </p>
+        </footer>
+
+        <script>
+           var agora = new Date();
+           var horas = agora.getHours();
+           var minu = agora.getMinutes();
+           let time = document.getElementById('time');
+           let corfundo = window.document.getElementById('corpo')
+           let imagF = window.document.getElementById('imag')
+           
+
+           
+           if(horas < 0){
+                time.innerText = `Agora são Exatamente ${horas}:${minu} `
+                time.innerText += `
+                
+                Bom dia!!`
+           }
+           else if (horas < 18){
+                imagF.style.backgroundImage = 'url(imagens/tarde.png)'
+                imagF.style.top = '35%'
+                imagF.style.left = '40%'
+                corfundo.style.backgroundColor = 'rgba(138, 64, 15, 0.678)'
+                time.innerText = `Agora são Exatamente ${horas}:${minu}`
+                time.innerText += `
+                
+                Boa Tarde!!`
+
+           }
+           else{
+                time.innerText = `Agora são Exatamente ${horas}:${minu}`
+                time.innerText += `
+
+                Boa Noite!!`
+                corfundo.style.backgroundColor = 'rgba(2, 1, 0, 0.527)'
+                imagF.style.backgroundImage = 'url(imagens/noite.png)'
+                imagF.style.top = '40%'
+                imagF.style.left = '58%'
+                
+           }
+        </script>
+</body>
+</html>
