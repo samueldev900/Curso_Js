@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calçulando Idade</title>
+</head>
+<style>
+    main{
+        color: black;
+        position: relative;
+        background-color: white;
+        margin: auto;
+        height: 700px;
+        width: 700px;
+        border-radius: 15px;
+        
+        }
+    p#ano{
+        
+        position: absolute;
+        text-align: justify;
+        width: 400px;
+        top: 10%;
+        padding: 5px;
+        margin: 10px;
+    }
+
+     p#sexo{
+        
+        position: absolute;
+        text-align: justify;
+        width: 400px;
+        top: 15%;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: white;
+        background-color: rgb(1, 133, 133);
+    }
+    div{
+        background-color: white;
+        background-image: url(imagens/homem-idoso.png);
+        height: 450px;
+        width: 550px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-60%,-25%);
+    }
+    input#veri{
+        position: absolute;
+        top: 23%;
+        left: 3%;
+    }
+    p#res{
+        font-size: 17pt;
+        position: absolute;
+        top: 27%;
+        left: 25%;
+       
+    }
+</style>
+<body>
+    <h1>Verificador de Idade</h1>
+    <main>
+        <p id="ano">Ano de Nascimento: <input id="wow" type="number"></p>
+        <p id="sexo" >
+            Sexo: 
+            <input type="radio" name="grupo" id="mas" value="masculino" >
+            Masculino
+            <input type="radio" name="grupo" id="fem" value="feminino">
+            Feminino
+        </p>
+        <input id="veri" type="button" value="Verificar" onclick="verificou()">
+        <p id="res">Insira seus Dados</p>
+        <div id="foto"></div>
+
+    </main>
+
+
+    </form>
+
+    <script>
+
+        function verificou(){
+            
+            year = document.getElementById('wow')
+            n = Number(year.value)
+            resp = document.getElementById('res')
+            radios = document.getElementsByName('grupo')
+            var valorSelecionado = "";
+
+            photo = document.getElementById('foto')
+            
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    valorSelecionado = radios[i].value;
+                    break; // Se um botão de rádio estiver selecionado, saia do loop.
+            }
+            }
+            
+
+            if(valorSelecionado == "masculino"){
+                
+                resp.innerHTML = `Detectamos um homem com ${n} anos.`
+                if(n <= 18){
+                    photo.style.backgroundImage = 'url(imagens/homem_adolecente.png)'
+                }
+                else if (n < 45){
+                    photo.style.backgroundImage = 'url(imagens/homem_adulto.jpg)'
+                    photo.style.transforme = 'translate(-50%,-22.5%)'
+                    
+                }
+
+                else if(n > 45){
+
+                    photo.style.backgroundImage = 'url(imagens/homem-idoso.png)'
+                    photo.style.backgroundSize = '100%';
+                    
+                }
+            }
+            else{
+
+                resp.innerHTML = `Detectamos uma mulher com ${n} anos.` 
+                
+
+            }
+
+
+
+        }
+
+    </script>
+    
+</body>
+</html>
