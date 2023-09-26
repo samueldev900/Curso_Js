@@ -67,6 +67,15 @@
         left: 25%;
        
     }
+    div#circle{
+        background-color: black;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+    }
 </style>
 <body>
     <h1>Verificador de Idade</h1>
@@ -81,7 +90,11 @@
         </p>
         <input id="veri" type="button" value="Verificar" onclick="verificou()">
         <p id="res">Insira seus Dados</p>
-        <div id="foto"></div>
+
+        <div id="circle" ></div>
+        
+
+    
 
     </main>
 
@@ -98,7 +111,7 @@
             radios = document.getElementsByName('grupo')
             var valorSelecionado = "";
 
-            photo = document.getElementById('foto')
+            circle = document.getElementById('circle')
             
             for (var i = 0; i < radios.length; i++) {
                 if (radios[i].checked) {
@@ -112,18 +125,18 @@
                 
                 resp.innerHTML = `Detectamos um homem com ${n} anos.`
                 if(n <= 18){
-                    photo.style.backgroundImage = 'url(imagens/homem_adolecente.png)'
+                    circle.style.backgroundImage = 'url(imagens/homem_adolecente.png)'
                 }
                 else if (n < 45){
-                    photo.style.backgroundImage = 'url(imagens/homem_adulto.jpg)'
-                    photo.style.transforme = 'translate(-50%,-22.5%)'
+                    circle.style.backgroundImage = 'url(imagens/homem_adulto.jpg)'
+                    circle.style.transforme = 'translate(-50%,-22.5%)'
                     
                 }
 
                 else if(n > 45){
 
-                    photo.style.backgroundImage = 'url(imagens/homem-idoso.png)'
-                    photo.style.backgroundSize = '100%';
+                    circle.style.backgroundImage = 'url(imagens/homem-idoso.png)'
+                    circle.style.backgroundSize = '100%';
                     
                 }
             }
