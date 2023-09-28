@@ -50,7 +50,6 @@ div#circle{
     background-image: url(imagens/foto_vazia.png);
 }
 
-
 input#veri{
     position: absolute;
     top: 20%;
@@ -76,7 +75,6 @@ p#sexo{
     padding: 5px;
     margin: 10px;
 }
-
 
 p#res{
 
