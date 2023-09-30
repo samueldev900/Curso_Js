@@ -25,7 +25,7 @@
         height: 300px;
         margin: auto;
         margin-top: 50px;
-        border-radius: 5%;
+        border-radius: 10px;
         background-color: white;
         height: auto;
     }
@@ -64,23 +64,51 @@
     </main>
 
     <script>
+
         function contagem(){
 
-            v= document.getElementById('inicio')
-            n = Number(v.value)
-            v1 = document.getElementById('fim')
-            n1 = Number(v1.value)
-            v2 = document.getElementById('passo')
-            n2 = Number(v2.value)
-            cont = document.getElementById('res')
+            v= document.getElementById('inicio');
+            n = Number(v.value);
+            v1 = document.getElementById('fim');
+            n1 = Number(v1.value);
+            v2 = document.getElementById('passo');
+            n2 = Number(v2.value);
+            cont = document.getElementById('res');
+            cont.innerHTML = '';
 
-            cont.innerHTML = ''
-            for(var i = n;i<=n1;i +=n2){
+            if(n2 == ''){
 
-                cont.innerHTML += ` 👉🏽 ${i}`
+                window.alert('[Erro] Passo Inválido, Será considerado o valor 1');
+                n2 = 1;
+                
+                for(var i = n;i<=n1;i +=n2){
+
+                cont.innerHTML += ` 👉🏽 ${i}`;
+                }
+
+                cont.innerHTML += ` 🏁`;
+
+            }
+            else if(n > n1){
+                window.alert('[Erro] Valores inválidos');
+            }
+            else{
+
+                for(var i = n;i<=n1;i +=n2){
+
+                    cont.innerHTML += ` 👉🏽 ${i}`;
+                }
+
+                cont.innerHTML += ` 🏁`;
+
             }
 
-            cont.innerHTML += ` 🏁`
+
+
+            
+
+            
+
 
 
         }

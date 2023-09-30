@@ -1,11 +1,16 @@
-function contatdor(n,n1){
+function contatdor(n){
 
-for(var i = 0;i<=n;i +=n1){
+    console.log(`Tabuada do número ${n}`)
 
-    console.log(i)
+    for(var i = 0;i<=10;i++){
+
+
+        console.log(`${n} x ${i} = ${n*i}`)
+
+    }
+
+
 }
 
-}
 
-
-contatdor(20,5)
+contatdor(-8)
