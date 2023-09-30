@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(78, 163, 197);
+    }
+    header{
+        margin-top: 50px;
+        text-align: center;
+        color: white;
+    }
+    main{
+        
+        width: 500px;
+        height: 300px;
+        margin: auto;
+        margin-top: 50px;
+        border-radius: 5%;
+        background-color: white;
+        height: auto;
+    }
+    section{
+        
+        padding-top: 15px;
+        
+    }
+    div{
+        
+        margin: 10px;
+        padding: 5px;
+    }
+    p{
+        margin: 10px;
+        padding-top: 0px;
+        padding: 20px;
+    }
+</style>
+<body>
+    <header>
+        <h1>Vamos Contar</h1>
+    </header>
+
+    <main>
+        <section>
+           <div>Inicio: <input type="number" id="inicio"></div>
+           <div>Fim:  <input type="number" id="fim"></div>
+           <div>Passo: <input type="number" id="passo"></div>
+           <div><input type="button" value="Contar" onclick="contagem()"></div>
+
+        </section>
+        
+            <p id="res">Preparando a contagem..</p>
+        
+    </main>
+
+    <script>
+        function contagem(){
+
+            v= document.getElementById('inicio')
+            n = Number(v.value)
+            v1 = document.getElementById('fim')
+            n1 = Number(v1.value)
+            v2 = document.getElementById('passo')
+            n2 = Number(v2.value)
+            cont = document.getElementById('res')
+
+            cont.innerHTML = ''
+            for(var i = n;i<=n1;i +=n2){
+
+                cont.innerHTML += ` 👉🏽 ${i}`
+            }
+
+            cont.innerHTML += ` 🏁`
+
+
+        }
+    </script>
+    
+</body>
+</html>
