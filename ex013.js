@@ -11,6 +11,3 @@ function contatdor(n){
 
 
 }
-
-
-contatdor(-8)

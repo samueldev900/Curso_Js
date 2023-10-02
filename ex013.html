@@ -10,15 +10,18 @@
         margin: 0px;
         padding: 0px;
     }
+    
     body{
         font-family: Arial, Helvetica, sans-serif;
         background-color: rgb(78, 163, 197);
     }
+
     header{
         margin-top: 50px;
         text-align: center;
         color: white;
     }
+
     main{
         
         width: 500px;
@@ -68,15 +71,15 @@
         function contagem(){
 
             v= document.getElementById('inicio');
-            n = Number(v.value);
             v1 = document.getElementById('fim');
-            n1 = Number(v1.value);
             v2 = document.getElementById('passo');
-            n2 = Number(v2.value);
             cont = document.getElementById('res');
+            n = Number(v.value);
+            n1 = Number(v1.value);
+            n2 = Number(v2.value);
             cont.innerHTML = '';
 
-            if(n2 == ''){
+            if(n2 == '' || n2 > n1){
 
                 window.alert('[Erro] Passo Inválido, Será considerado o valor 1');
                 n2 = 1;
@@ -102,13 +105,6 @@
                 cont.innerHTML += ` 🏁`;
 
             }
-
-
-
-            
-
-            
-
 
 
         }
