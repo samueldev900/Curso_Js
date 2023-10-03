@@ -80,13 +80,21 @@
         
         function add(){
 
-            selinfo = document.getElementById('info')
-            opt = document.createElement('option')
-            num = document.getElementById('inum')
-            
+            var selinfo = document.getElementById('info')
+            var opt = document.createElement('option')
+            var num = document.getElementById('inum')
+            var check = list.indexOf(inum.value)
             if(inum.value =='' || inum.value > 100 || inum.value < 1 ){
 
                 window.alert('Por favor, insira um numero válido')
+            }
+            else if(inum.value in list){
+
+                window.alert('Por favor, insira um numero válido')
+            }
+            else if(check != -1){
+
+                window.alert('Valor já adicionado, Por favor insira um numero válido')
             }
             else{
                 list.push(inum.value)
@@ -94,26 +102,37 @@
                  selinfo.appendChild(opt)
             }
 
+            inum.value = ''; //Deixa a caixa de texto vazia após adicionar o valor.
+
         }
 
         function fim(){
 
-                resp = document.getElementById('resf')
-                resp.innerHTML = `Ao todo, Temos ${list.length} números cadastrados`
-                maior = 0 
+                resp = document.getElementById('resf');
+                maior = 0; 
+                menor = 0;
 
 
-                for(let n in list){
+                for(let i in list){
 
-                    if(list[n] > maior){
+                    if(maior,menor == 0){
 
-                        maior = n;
+                        maior,menor = list[i]
+                    }
+                    else if(list[i] > maior){
 
+                        maior = list[i];
+
+                    }
+                    else if(list[i]< menor){
+
+                        menor = list[i]
                     }
                     
                 }
-                resp.innerHTML += `E dentre eles o maior número é ${maior}<br>`
-
+                    resp.innerHTML = `<br>Ao todo, Temos ${list.length} números cadastrados.<br>`;
+                    resp.innerHTML += `<br>E dentre eles, o maior número é ${maior}.<br>`;
+                    resp.innerHTML += `<br>E o menor número é ${menor}.<br>`;
                 
         }
 
